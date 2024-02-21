@@ -1,0 +1,39 @@
+{
+  "name": "webpack-mod",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/webpack-mod/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "dependsOn": ["lint"],
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/webpack-mod",
+        "main": "apps/webpack-mod/src/main.ts",
+        "tsConfig": "apps/webpack-mod/tsconfig.app.json",
+        "assets": ["apps/webpack-mod/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/webpack-mod/webpack.config.cjs"
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "webpack-mod:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "webpack-mod:build:development"
+        },
+        "production": {
+          "buildTarget": "webpack-mod:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

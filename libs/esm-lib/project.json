@@ -1,0 +1,29 @@
+{
+  "name": "esm-lib",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/esm-lib/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/esm-lib",
+        "main": "libs/esm-lib/src/index.ts",
+        "tsConfig": "libs/esm-lib/tsconfig.lib.json",
+        "assets": ["libs/esm-lib/*.md"],
+        "generatePackageJson": true,
+        "format": ["esm"],
+        "bundle": true
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../coverage/libs/esm-lib"
+      }
+    }
+  },
+  "tags": []
+}

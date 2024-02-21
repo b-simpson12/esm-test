@@ -1,0 +1,28 @@
+{
+  "name": "basic-lib",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/basic-lib/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/basic-lib",
+        "main": "libs/basic-lib/src/index.ts",
+        "tsConfig": "libs/basic-lib/tsconfig.lib.json",
+        "assets": ["libs/basic-lib/*.md"],
+        "generatePackageJson": true,
+        "format": ["cjs"]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../coverage/libs/basic-lib"
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,38 @@
+{
+  "name": "esbuild-mod",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/esbuild-mod/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/esbuild-mod",
+        "main": "apps/esbuild-mod/src/main.ts",
+        "tsConfig": "apps/esbuild-mod/tsconfig.app.json",
+        "assets": [],
+        "generatePackageJson": true,
+        "format": ["esm"],
+        "platform": "node",
+        "bundle": true
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "esbuild-mod:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "esbuild-mod:build:development"
+        },
+        "production": {
+          "buildTarget": "esbuild-mod:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

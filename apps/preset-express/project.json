@@ -1,0 +1,24 @@
+{
+  "name": "preset-express",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/preset-express/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "preset-express:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "preset-express:build:development"
+        },
+        "production": {
+          "buildTarget": "preset-express:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

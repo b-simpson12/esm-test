@@ -1,0 +1,28 @@
+{
+  "name": "cjs-lib",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/cjs-lib/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/cjs-lib",
+        "main": "libs/cjs-lib/src/index.ts",
+        "tsConfig": "libs/cjs-lib/tsconfig.lib.json",
+        "assets": ["libs/cjs-lib/*.md"],
+        "generatePackageJson": true,
+        "format": ["cjs"]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../coverage/libs/cjs-lib"
+      }
+    }
+  },
+  "tags": []
+}

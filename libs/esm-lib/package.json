@@ -1,0 +1,7 @@
+{
+  "name": "@esm-test/esm-lib",
+  "version": "0.0.1",
+  "dependencies": {},
+  "type": "module",
+  "main": "./index.cjs"
+}
