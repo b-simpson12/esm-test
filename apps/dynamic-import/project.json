@@ -1,0 +1,24 @@
+{
+  "name": "dynamic-import",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/dynamic-import/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "dynamic-import:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "dynamic-import:build:development"
+        },
+        "production": {
+          "buildTarget": "dynamic-import:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}
