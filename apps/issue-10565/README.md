@@ -6,5 +6,5 @@
 
 
 
-`nx run issue-10565:build` - (Fails - does not recognize libs) - WORKS with esm module imports
-`nx run issue-10565:serve` - (Fails - does not recognize libs) - WORKS with esm module imports
+`nx run issue-10565:build` - (Fails - does not recognize libs) - WORKS with only esm module imports
+`nx run issue-10565:serve` - (Fails - does not recognize libs) - WORKS with only esm module imports

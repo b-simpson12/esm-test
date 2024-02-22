@@ -3,5 +3,5 @@
 
 
 
-`nx run express-10565:build` - (Fails - does not recognize libs) - WORKS with esm module imports
-`nx run express-10565:serve` - (Fails - does not recognize libs) - WORKS with esm module imports
+`nx run express-10565:build` - (Fails - does not recognize libs) - WORKS with only esm module imports
+`nx run express-10565:serve` - (Fails - does not recognize libs) - WORKS with only esm module imports
