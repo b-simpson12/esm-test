@@ -6,9 +6,9 @@ module.exports = (config, context) => ({
     outputModule: true,
     topLevelAwait: true,
   },
-  entry: './apps/issue-10565/src/main.ts',
+  entry: './apps/express-10565/src/main.ts', // Entry point of your Express application
   output: {
-    path: path.resolve(__dirname, '../../dist/apps/issue-10565'),
+    path: path.resolve(__dirname, '../../dist/apps/express-10565'),
     chunkFormat: 'module',
     library: {
       type: 'module',
@@ -17,5 +17,6 @@ module.exports = (config, context) => ({
   resolve: {
     extensions: ['.ts', '.js'],
   },
-  target: 'node',
+  target: 'node', // Important for server-side applications
+
 })

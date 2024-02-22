@@ -1,0 +1,40 @@
+{
+  "name": "express-10565",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/express-10565/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/express-10565",
+        "outputFileName": "main.mjs",
+        "main": "apps/express-10565/src/main.ts",
+        "tsConfig": "apps/express-10565/tsconfig.app.json",
+        "assets": [
+          "apps/express-10565/src/assets"
+        ],
+        "webpackConfig": "apps/express-10565/webpack.config.js"
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "express-10565:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "express-10565:build:development"
+        },
+        "production": {
+          "buildTarget": "express-10565:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

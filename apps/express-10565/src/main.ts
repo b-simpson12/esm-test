@@ -8,19 +8,17 @@ import * as path from 'path';
 import { basicLib } from '@esm-test/basic-lib';
 import { lowercase } from '@esm-test/cjs-lib';
 import { lowercase as esmLowercase } from '@esm-test/esm-lib';
-const dynamicLowerCase = (value: string) => import('lodash-es').then(({lowerCase}) => lowerCase(value));
 
 const app = express();
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to dynamic-import!' });
+  res.send({ message: 'Welcome to express-10565!' });
 });
 
 const port = process.env.PORT || 3333;
 const server = app.listen(port, () => {
-  console.log(dynamicLowerCase('TEST'));
   console.log(basicLib());
   console.log(lowercase('Hello World'));
   console.log(esmLowercase('Hello World'));
