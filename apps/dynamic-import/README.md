@@ -3,5 +3,5 @@
 3.
 
 
-`nx run dynamic-import:build`
-`nx run dynamic-import:serve`
+`nx run dynamic-import:build` - (Works)
+`nx run dynamic-import:serve` - (Fails with Error [ERR_REQUIRE_ESM]: require() of ES Module)

@@ -8,5 +8,5 @@
 - Added imports to main.ts
 
 
-`nx run esbuild-mod:build`
-`nx run esbuild-mod:serve`
+`nx run esbuild-mod:build` - (Fails - does not recognize libs) - WORKS with esm module import
+`nx run esbuild-mod:serve` - (Fails - does not recognize libs) - WORKS with esm module import

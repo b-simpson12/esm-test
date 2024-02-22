@@ -11,5 +11,5 @@
 3. 
 
 
-`nx run webpack-mod:build`
-`nx run webpack-mod:serve`
+`nx run webpack-mod:build` - (Fails - does not recognize libs) - WORKS with esm module import
+`nx run webpack-mod:serve` - (Fails - does not recognize libs) - WORKS with esm module import
