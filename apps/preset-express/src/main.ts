@@ -6,8 +6,6 @@
 import express from 'express';
 import * as path from 'path';
 
-const dynamicLowerCase = (value: string) => import('lodash-es').then(({lowerCase}) => lowerCase(value));
-
 const app = express();
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
@@ -18,7 +16,6 @@ app.get('/api', (req, res) => {
 
 const port = process.env.PORT || 3333;
 const server = app.listen(port, () => {
-  console.log(dynamicLowerCase('TEST'));
   console.log(`Listening at http://localhost:${port}/api`);
 });
 server.on('error', console.error);
